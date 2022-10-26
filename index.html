@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>weather</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container_1">
+    <div class="container_1_size">
+        <form class="search">
+            <div><input type="text" onkeyup="this.value = this.value.replace(/[^a-z\s]/gi, '');" placeholder="Enter the city (only english)"></div>
+            <button><img class="search_img" src="./img/640px-Google_Magnifying_Glass.svg.png"></button>
+        </form>
+        <div class="display">
+            <div id="Now" class="tab_content" style="display: flex;">
+                <div class="now_temperature">t<span>&deg</span></div>
+                <div class="now_weather_icon"></div>
+                <div class="now_likes_city">
+                    <div class="now_city"></div>
+                    <div id="add_city" class="now_likes_shape">&#9825</div>
+                </div>
+            </div>
+            <div id="Details" class="tab_content">
+                <div class="current_city details_current_city">-</div>
+                <div class="details_container">
+                    <ul>
+                        <li>Temperature: <span class="current_temperature">-</span><span>&deg</span></li>
+                        <br>
+                        <li>Feels like: <span class="current_feels_like">-</span><span>&deg</span></li>
+                        <br>
+                        <li>Weather: <span class="current_weather">-</span></li>
+                        <br>
+                        <li>Sunrise: <span class="current_sunrise">-</span></li>
+                        <br>
+                        <li>Sunset: <span class="current_sunset">-</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="Forecast" class="tab_content">
+                <div id="forecast_city" class="current_city">-</div>
+                <div class="forecast_container">
+                    <ul id="forecast_items"></ul>
+                </div>
+            </div>
+            <div class="tab">
+                <button class="tab_links active" onclick="changeCityTab(event, 'Now')">Now</button>
+                <button class="tab_links" onclick="changeCityTab(event, 'Details')">Details</button>
+                <button class="tab_links" onclick="changeCityTab(event, 'Forecast')">Forecast</button>
+            </div>
+        </div>
+        <div class="locations">
+            <div class="added_location_head">Added Locations:</div>
+            <div class="added_location_list">
+                <div class="location_list">
+                    <ul id="location_list">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
